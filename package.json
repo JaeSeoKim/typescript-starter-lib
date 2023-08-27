@@ -1,0 +1,21 @@
+{
+  "name": "workspace",
+  "private": true,
+  "scripts": {
+    "dev": "pnpm -C ./dev dev",
+    "build:packages": "pnpm --parallel --aggregate-output --filter \"./packages/**\" build",
+    "lint": "pnpm --parallel --aggregate-output -r lint",
+    "prettier:check": "prettier . --check",
+    "prettier:write": "prettier . --write"
+  },
+  "engines": {
+    "node": ">=18",
+    "pnpm": ">=8"
+  },
+  "devDependencies": {
+    "@configs/babel": "workspace:*",
+    "@configs/prettier": "workspace:*",
+    "prettier": "^3.0.2",
+    "typescript": "^5.2.2"
+  }
+}
