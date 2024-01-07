@@ -1,11 +1,12 @@
 export type CardProps = {
   title: string
-  children: React.ReactNode
+  children?: React.ReactNode | undefined
 }
 
 export const Card: React.FC<CardProps> = ({ title, children }) => {
   return (
     <div
+      data-testid="card"
       style={{
         display: "flex",
         flexDirection: "column",
@@ -13,8 +14,8 @@ export const Card: React.FC<CardProps> = ({ title, children }) => {
         borderRadius: "4px",
       }}
     >
-      <h1>{title}</h1>
-      <div>{children}</div>
+      <h1 data-testid="card-title">{title}</h1>
+      <div data-testid="card-children">{children}</div>
     </div>
   )
 }
